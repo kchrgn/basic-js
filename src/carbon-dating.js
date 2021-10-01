@@ -20,7 +20,7 @@ const HALF_LIFE_PERIOD = 5730;
 export default function dateSample(sampleActivity) {
   if (isNaN(+sampleActivity)) return false;
   if (typeof (sampleActivity) != 'string') return false;
-  if (+sampleActivity > 15) return false;
+  if (+sampleActivity > 15 || +sampleActivity <= 0) return false;
   if (Number.isInteger(Math.ceil(Math.log(15/sampleActivity)/1.22e-4))) {
     return Math.ceil(Math.log(15/sampleActivity)/1.22e-4)
    } else {
